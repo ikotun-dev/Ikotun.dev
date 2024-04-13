@@ -61,19 +61,19 @@ uvicorn main:app --reload ( API launches with hot-reload)
 ## What's left ?
 ### Future Features/Extensions
 
-- Feeding the API usernames - `social handles` directly and crawler is immediately called ( signal triggered )
-- Notifications on Issues/Failures
-  - Crawler would be running for lengthy times so this is neccessary. 
-- Passing Tokens either VIA API or VIA ENVS dynamically 
-- Support for other socials. 
-- Automatic Expiration of products. 
-- Strict Duplicate data check ( Implemented but not strict enough. )
-- Live Deployment ( Docker - Recommended )
+#### Feeding the API usernames - `social handles` directly and crawler is immediately called ( signal triggered )
+##### Notifications on Issues/Failures
+  ###### Crawler would be running for lengthy times so this is neccessary. 
+##### Passing Tokens either VIA API or VIA ENVS dynamically 
+##### Support for other socials. 
+##### Automatic Expiration of products. 
+##### Strict Duplicate data check ( Implemented but not strict enough. )
+##### Live Deployment ( Docker - Recommended )
 
 ## External Dependencies
-- chromedriver 
-  - Helps simulate the whole process of accessing the browser ( crawling and scraping )
-  - ###### This was built using `chromedriver-arm64_2`
+### chromedriver 
+   ##### Helps simulate the whole process of accessing the browser ( crawling and scraping )
+   ##### This was built using `chromedriver-arm64_2`
 
 
 
