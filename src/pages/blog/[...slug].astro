@@ -4,82 +4,83 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
+export async function getStaticPaths() {
+  const allBlogArticles: CollectionEntry<"blog">[] =
+    await getCollection("blog");
+  return allBlogArticles.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
 
-export async function  getStaticPaths () {
-    const allBlogArticles: CollectionEntry<'blog'>[] = await getCollection('blog');
-    return allBlogArticles.map(entry => ({
-        params : {
-            slug: entry.slug,
-        }, 
-
-        props : {entry}
-    }))
+    props: { entry },
+  }));
 }
 
-let { entry } = Astro.props
-const {Content} = await entry.render()
-
+let { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
-<MainLayout>
-<Content/>
 
+<MainLayout>
+  <!-- <Content/> -->
+
+  <main class="blog-content text-white font-lato">
+    <div class="my-6">
+      <h1 class="!text-3xl !font-medium font-souvenir !mb-4">{entry.data.title}</h1>
+      <h6 class="text-xs lg:text-sm text-neutral-500 mt-3">
+        {entry.data.pubDate.toLocaleString("en-US", { dateStyle: "long" })}
+      </h6>
+    </div>
+    <Content />
+  </main>
 </MainLayout>
 
-
 <style is:global>
-body{
-    color: azure;
-    font-family: 'Lato', sans-serif;
+.blog-content a {
+	color: white;
+}
+.blog-content a:hover {
+	text-decoration: underline;
+}
+.blog-content h1 {
+	@apply text-3xl font-bold font-souvenir mt-8 -mb-2;
+    color: white;
+}
+.blog-content h2 {
+	@apply text-xl text-neutral-200 font-bold font-souvenir mt-4 -mb-2;
+    color: white;
+}
+.blog-content p {
+	margin: 1rem 0;
+	font-size: .95rem;
+    color: white;
+}
+.blog-content p > code {
+	padding: 0.15rem 0.4rem;
+	font-family: "Lato", sans-serif;
+	@apply text-blue-400 bg-blue-400/10 text-xs font-semibold rounded-sm border border-blue-500;
+}
+.blog-content pre {
+	background-color: var(--secondary-dark) !important;
+	padding: 1.25rem;
+	font-size: 0.85rem;
+	font-family: "Lato", sans-serif;
+    color: white;
+	overflow-x: auto;
+}
+.blog-content blockquote {
+	@apply bg-blue-500 bg-opacity-10 border-l-2 border-blue-500 px-4 py-2.5 my-4;
+}
+.blog-content blockquote p {
+	font-family: "Lato", sans-serif;
+	font-style: italic;
+	font-size: 0.88rem;
+    color: white;
+	line-height: 1.9;
+	margin: 0;
+	@apply text-blue-500;
 }
 
-p{
-  margin: 20px 0;
+.font-souvenir {
+    font-family: "Lato", sans-serif !important;
 }
-
-h1{
-    margin: 20px 0;
-    font-weight: 900;
-    font-size: larger;
-}
-
-h3{
-    margin: 20px 0;
-}
-
-h2{
-    margin: 20px 0;
-    font-weight: 800;
-    font-size: medium;
-    color: whitesmoke;
-}
-
-h4, h5, p{
-    margin: 20px 0;
-    font-weight: 400;
-    font-size: small;
-    color: whitesmoke;
-}
-
-
-span{
-    font-size: smaller;
-    padding-left: 5px;
-}
-
-
-.astro-code { 
-    padding-top: 14px;
-    border-radius: 4px;
-    height: auto; 
-}
-
-
-
-ul.li{
-    font-size: smaller;
-}
-
-
-
 </style>
-
