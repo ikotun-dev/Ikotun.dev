@@ -1,0 +1,62 @@
+---
+const projects = [
+  {
+    name: "Larchive",
+    description: "Quick archive for your links",
+    url: "https://larchive-app.vercel.app/",
+    github_url: "https://github.com/ikotun-dev/larchive",
+    image: "larchive.jpeg",
+  },
+  {
+    name: "Dropit",
+    description: "Share files and contents seamlessly",
+    url: "https://usedropit.xyz/",
+    github_url: null,
+    image: "Dropit.jpg",
+  },
+  {
+    name: "Gitly",
+    description: "View all your git repositories in one place",
+    url: "https://qsui.vercel.app/",
+    github_url: null,
+    image: "gitly.jpg",
+  },
+  {
+    name: "Portshield",
+    description: "View and close running ports from CLI",
+    url: null,
+    github_url: null,
+    image: "portshield.png",
+  },
+];
+---
+
+<div class="flex flex-wrap w-full justify-center items-center">
+  {
+    projects.map((project) => (
+      <a href={`${project.url}`} target="_blank">
+      <div class="w-[20rem] lg:w-[30rem] h-auto rounded-sm flex-col lg:my-4 cursor-pointer mr-2" >
+        <div>
+          <img
+            src={`/images/projects/${project.image}`}
+            class="lg:w-[80%] lg:h-[80%] h-full w-full  hover:scale-105 object-cover object-center transition-all rounded-lg"
+          />
+        </div>
+        <div class="text-zinc-300 font-neue py-2">
+          <div class="flex">
+            <h3 class="font-extrabold font-lato text-xl mr-3">
+              {project.name}
+            </h3>
+  
+          </div>
+          <div class="flex justify-between mr-14 items-center">
+            <h3 class="font-lato text-zinc-400 text-xs mt-1">
+              {project.description}
+            </h3>
+          </div>
+        </div>
+      </div>
+      </a>
+    ))
+  }
+</div>
