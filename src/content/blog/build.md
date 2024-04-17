@@ -8,7 +8,7 @@ slug: 'internship-product-optimization'
 
 Heyy!
 
-My internship has been fun so far, battling new tools and stuff I've never never worked with before, major stuff I worked on was a web scraper that scrapes🥷 Instagram 😄. Yeah, Illegal I know. I would love to be in the news for it! 😇
+My internship has been fun so far; battling new tools and stuff I've never never worked with before. Major stuff I worked on was a web scraper that scrapes🥷 Instagram 😄. Yeah, (Illegal I know). I would love to be in the news for it! 😇
 
 The goal was to :
 
@@ -16,7 +16,7 @@ The goal was to :
 
 At first, It seemed like an insane idea that would not suffice but I decided to take up the challenge.
 
-I went online, researched and of course I planned to write it in python, I found libraries like 
+I went online, researched and of course I planned to write it in python, I found libraries like;
 > Selenium, BeautifulSoup and Scrapy!
 
 The first thing I did was to understand the aim of the project, `why do they want this?` <br>
@@ -63,12 +63,12 @@ After the whole check is done, next thing is to scrape their posts.
 
 I couldn't do this manually for some reason. I had to use an external tool called `APIFY`. They provide scraping services ( No idea why they haven't been flagged 😂😂).
 
-I integrated their API and it worked fine! only down side was the 30 posts limit for every account and the scraping time could get really long sometimes. 
+I integrated their API and it worked fine! Only down side was the 30 posts limit for every account and the scraping time could get really long sometimes. 
 
-APIFY returned the posts in JSON format which is cool. Made it easy for me to filter.
-Also We didn't want products posted more than a month ago
+APIFY returned the posts in JSON format which is cool, Made it easy for me to filter.
+Also we didn't want products posted more than a month ago
 
-So after the filtering and validating the time stamp. 
+So after the filtering and validating the time stamp. <br>
 Next up - was constructing a json object for the product.<br>
 Before that, I had to generate a proper description for the product's image, but the question was - HOW? 
 
@@ -83,7 +83,7 @@ Later, I discovered that the ImageUrls for the instagram posts expires after som
 This was a big problem, what could I do?!!
 
 An option was to download every image and upload to our own cloud provider. 
-`Thats an expensive process` - as said by my CTO, then he mentioned base64 images, 
+`That's an expensive process` - as said by my CTO, then he mentioned base64 images, 
 
 To be honest, that was the first time I would be working with base64 images. 
 
