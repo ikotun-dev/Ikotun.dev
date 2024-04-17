@@ -8,7 +8,7 @@ slug: 'internship-product-optimization'
 
 Heyy!
 
-My internship has been fun so far; battling new tools and stuff I've never never worked with before. Major stuff I worked on was a web scraper that scrapes🥷 Instagram 😄. Yeah, (Illegal I know). I would love to be in the news for it! 😇
+My internship has been fun so far; battling new tools and stuff I've never never worked with before. Major stuff I worked on was a web scraper that scrapes🥷 Instagram 😄. Yeah (Illegal I know). I would love to be in the news for it! 😇
 
 The goal was to :
 
