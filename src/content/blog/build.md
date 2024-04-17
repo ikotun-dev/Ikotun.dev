@@ -12,7 +12,7 @@ My internship has been fun so far, battling new tools and stuff I've never never
 
 The goal was to :
 
-> scrape Products on IG and save to a database. 
+> Scrape products on IG, filter based on certain requirements and save to a database. 
 
 At first, It seemed like an insane idea that would not suffice but I decided to take up the challenge.
 
