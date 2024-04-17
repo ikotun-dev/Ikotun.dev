@@ -12,7 +12,7 @@ const allBlogArticles: CollectionEntry<'blog'>[] = (await getCollection('blog'))
 ---
 
 <MainLayout>
-  <div class="mt-8">
+  <div class="mt-8 h-[80%]">
     <h2 class="text-white font-lato font-bold mb-4">Recent Posts:</h2>
     {
       allBlogArticles.map((article) => (
