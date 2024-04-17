@@ -3,6 +3,8 @@ import type { GetStaticPaths } from "astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components"
+
 
 export async function getStaticPaths() {
   const allBlogArticles: CollectionEntry<"blog">[] =
@@ -21,6 +23,10 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout>
+  <a href="/blog" class="flex items-center">
+  <Icon name="back" class="text-xl font-extrabold"/>
+  <h3 class="font-semibold text-white font-lato ml-2">Back</h3>
+  </a>
   <!-- <Content/> -->
 
   <main class="blog-content text-white font-lato">

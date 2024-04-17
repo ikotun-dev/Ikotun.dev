@@ -11,13 +11,13 @@ interface Props {
 
 ---
 
-<a href={"/blog/" + article.slug}>
+<a href={"/blog/" + article?.slug}>
     <div class="flex justify-between items-center border-b-2 py-2 border-gray-600">
       <h2 class="text-gray-200 font-lato font-extrabold mr-10 ">
-        {article.data.title.slice(0,25)}.....
+        {article?.data.title.slice(0,25)}.....
       </h2>
       <h2 class="text-gray-600 font-lato text-xs font-extrabold ">
-        {formatDate(article.data.pubDate)}
+        {formatDate(article?.data.pubDate)}
       </h2>
     </div>
   </a>
