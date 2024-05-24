@@ -104,7 +104,7 @@ Select STOP and proceed with that partition.
 `The files in RED : are files that were deleted previously or otherwise problematic`
 
 
-`THe files in white : are files that are fine and directly accessible`
+`The files in white : are files that are fine and directly accessible`
 
 When you move to your desired file, to recover it : use the `c`  key.
 > It moves you to a different directory on your machine to paste the copied files 
