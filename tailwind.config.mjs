@@ -7,7 +7,8 @@ export default {
 				'neue': ["Comic Neue", "cursive"],
 				'italia': ["Italianno", "cursive"],
 				'soon': ["Coming Soon", "cursive"],
-				'lato': ["Lato", "sans-serif"]
+				'lato': ["Lato", "sans-serif"],
+				'cascadia' : ["Cascadia Code", "sans-serif"]
 		
 			  }, fontWeight: {
 				'neue-bold': 900,
