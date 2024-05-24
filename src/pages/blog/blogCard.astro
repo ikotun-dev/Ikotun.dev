@@ -11,10 +11,10 @@ interface Props {
 
 ---
 
-<a href={"/blog/" + article?.slug}>
-    <div class="flex justify-between items-center border-b-2 py-2 border-gray-600">
+<a href={"/blog/" + article?.slug} class="border-b-2 py-2 border-gray-600">
+    <div class="flex justify-between items-center border-b-2 py-2 border-gray-800">
       <h2 class="text-gray-200 font-lato font-extrabold mr-10 ">
-        {article?.data.title.slice(0,25)}...
+        {article?.data.title}
       </h2>
       <h2 class="text-gray-600 font-lato text-xs font-extrabold ">
         {formatDate(article?.data.pubDate)}
