@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components"
 
-
+export const prerender = true;
 export async function getStaticPaths() {
   const allBlogArticles: CollectionEntry<"blog">[] =
     await getCollection("blog");
