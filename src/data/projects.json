@@ -4,7 +4,7 @@
       "description": "Quick archive for your links",
       "url": "https://larchive-app.vercel.app/",
       "github_url": "https://github.com/ikotun-dev/larchive",
-      "image": "larchive.jpeg"
+      "image": "larchive.jpg"
     },
     {
       "name": "Dropit",
@@ -18,7 +18,7 @@
       "description": "View all your git repositories in one place",
       "url": "https://qsui.vercel.app/",
       "github_url": null,
-      "image": "gitly.jpg"
+      "image": "gitly2.jpg"
     },
     {
       "name": "Portshield",
