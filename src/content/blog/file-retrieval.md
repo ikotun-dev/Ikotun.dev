@@ -131,4 +131,3 @@ As Instructed, use the `C` key when the destination is correct
 
 
 
-For any issues or comments    :[`TEXT ME`](mailto:danlogan2003@gmail.com)
