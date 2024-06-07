@@ -1,9 +1,11 @@
 ---
-import type { GetStaticPaths } from "astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components"
+import  Comments   from "../../components/Comments";
+
+
 
 export const prerender = true;
 export async function getStaticPaths() {
@@ -23,13 +25,14 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout>
+ 
   <a href="/blog" class="flex items-center">
   <Icon name="back" class="text-xl font-extrabold"/>
   <h3 class="font-semibold text-white font-lato ml-2">Back</h3>
   </a>
   <!-- <Content/> -->
 
-  <main class="blog-content text-white font-lato">
+  <main class="blog-content text-white font-lato pb-12">
     <div class="my-6">
       <h1 class="!text-3xl !font-medium font-souvenir !mb-4">{entry.data.title}</h1>
       <h6 class="text-xs lg:text-sm text-neutral-500 mt-3">
@@ -37,8 +40,15 @@ const { Content } = await entry.render();
       </h6>
     </div>
     <Content />
+    <Comments client:idle />
+
   </main>
-</MainLayout>
+
+
+
+</MainLayout> 
+
+
 
 <style is:global>
 .blog-content a {
