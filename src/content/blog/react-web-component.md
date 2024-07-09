@@ -15,7 +15,7 @@ I had a lot of issues and blockers when I tried to do this so I decided to write
 
 > ### NOTE
 > Basic knowledge of reactJS is required. <br/>
-> This would only work with [VITE]('https://vitejs.dev/') build tool. 
+> This would only work with [VITE]('https://vitejs.dev/') build tool. <br/>
 > I'm using typescript.
 
 <br/>
