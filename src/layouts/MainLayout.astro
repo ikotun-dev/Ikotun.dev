@@ -43,6 +43,19 @@ import Footer from "../pages/HomePage/Footer.astro";
   </head>
 
   <body class="bg-black min-h-screen pt-20 px-8 lg:px-72 md:px-24">
+
+    <div style="position: fixed; z-index: 2147483647; pointer-events: none">
+      <issueiq-bubble
+        chatbot-id="82f7de52-db05-4081-a2cb-58c87b6072a6"
+        style="pointer-events: auto"
+      ></issueiq-bubble>
+    </div>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/issueiq@0.0.8/dist/loader.js"
+    ></script>
+
+    
     <Nav />
 
     <slot />
