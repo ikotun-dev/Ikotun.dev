@@ -47,7 +47,7 @@ I accepted my reality and decided to try centrifugo.
 
 > 
 > <u>[Centrifugo]('https://centrifugal.dev/') </u> is a real-time messaging server that helps you build scalable and efficient real time systems.
-> It manages the connectins and handling of messages between the backend application and the connected clients 
+> It manages the connections and handling of messages between the backend application and the connected clients 
 > Your backend application mainly handles the business logic while all real time processes are on a different server entirely - centrifugo server.
 
 
