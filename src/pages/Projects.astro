@@ -1,16 +1,16 @@
 ---
 const projects = [
-   {
-    "name": "IssueIQ(coming soon)",
-    "description": "Create chatbots easily with human escalation",
-    "url": "https://iq.ikotun.xyz",
-    "github_url": null,
-    "image": "issueiq.png"
+  {
+    name: "IssueIQ(coming soon)",
+    description: "Create chatbots easily with human escalation",
+    url: "https://iq.ikotun.xyz",
+    github_url: null,
+    image: "issueiq.png",
   },
   {
     name: "Dropit",
     description: "Share files and contents seamlessly",
-    url: "https://usedropit.xyz/",
+    url: "https://usedropit.ikotun.xyz/",
     github_url: null,
     image: "Dropit.jpg",
   },
@@ -28,7 +28,7 @@ const projects = [
     github_url: "https://github.com/ikotun-dev/larchive",
     image: "larchive.jpeg",
   },
-    {
+  {
     name: "Gitly",
     description: "View all your git repositories in one place",
     url: "https://qsui.vercel.app/",
@@ -45,31 +45,30 @@ const projects = [
 ];
 ---
 
-<div class="flex flex-wrap w-full justify-center items-center">
-  {
-    projects.map((project) => (
-      <a href={`${project.url}`} target="_blank">
-    <div class="w-[15rem] md:w-[20rem] lg:w-[25rem] h-auto rounded-sm flex-col m-8 cursor-pointer">
-  <div class="w-full h-[10rem] md:h-[15rem] lg:h-[20rem]">
-    <img
-      src={`/images/projects/${project.image}`}
-      class="w-full h-full hover:scale-105 object-cover object-center transition-all rounded-lg"
-    />
-  </div>        <div class="text-zinc-300 font-neue py-2">
-          <div class="flex">
-            <h3 class="font-extrabold font-satoshi text-[12px] mr-3">
-              {project.name}
-            </h3>
-  
-          </div>
-          <div class="flex justify-between mr-14 items-center">
-            <h3 class="font-satoshi text-zinc-400 text-xs mt-1">
-              {project.description}
-            </h3>
-          </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+  {projects.map((project) => (
+    <a 
+      href={project.url || '#'} 
+      target="_blank"
+      class="block"
+    >
+      <div class="bg-zinc-900/50 rounded-lg overflow-hidden hover:bg-zinc-800/50 transition-colors">
+        <div class="aspect-video">
+          <img
+            src={`/images/projects/${project.image}`}
+            alt={project.name}
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="font-extrabold text-zinc-300 text-sm mb-2">
+            {project.name}
+          </h3>
+          <p class="text-zinc-400 text-sm">
+            {project.description}
+          </p>
         </div>
       </div>
-      </a>
-    ))
-  }
+    </a>
+  ))}
 </div>
