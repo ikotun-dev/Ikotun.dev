@@ -37,7 +37,8 @@ That's like an  `86%` performance improvement.
 Rewriting this in Go or any other high-performance language could result in better performance as suggested by [`@lanreadelowo`]('https://x.com/lanreadelowo'). They have superior concurrency handling and handle asynchronous operations more efficiently, but time constraints do exists. 
 
 <br/> 
-[`Ayodeji`]('https://github.com/aosasona') and I were casually talking about this problem the other day and he said this <br/> 
+
+[`Ayodeji`]('https://github.com/aosasona') and I were casually talking about this problem the other day and he said this. <br/> 
 
 ![saga](https://res.cloudinary.com/dbd7rcwwx/image/upload/v1735160445/Screenshot_2024-12-25_at_9.48.44_PM_zsekzx.png)
 
