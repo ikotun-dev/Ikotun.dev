@@ -73,16 +73,24 @@ const { Content } = await entry.render();
 .blog-content p > code {
 	padding: 0.15rem 0.4rem;
 	font-family: "Lato", sans-serif;
+  border: 1px solid white;
 	@apply text-blue-400 bg-blue-400/10 text-xs font-semibold rounded-sm border border-blue-500;
 }
 .blog-content pre {
 	background-color: var(--secondary-dark) !important;
 	padding: 1.25rem;
-	font-size: 0.85rem;
+	font-size: 0.7rem;
+  border: 1px solid #383838;
 	font-family: "Lato", sans-serif;
     color: white;
 	overflow-x: auto;
 }
+@media screen and (min-width: 768px) {
+    .blog-content pre {
+        font-size: 0.875rem;
+    }
+}
+
 .blog-content blockquote {
 	@apply bg-blue-500 bg-opacity-10 border-l-2 border-blue-500 px-4 py-2.5 my-4;
 }
