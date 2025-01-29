@@ -205,3 +205,8 @@ if __name__ == "__main__":
 Testing this on my end, I get this
 
 ![Result](https://res.cloudinary.com/dbd7rcwwx/image/upload/v1738181550/Screenshot_2025-01-29_at_8.54.54_PM_e2yck5.png)
+
+<br/>
+<b>Note</b>
+
+> This guide is intended to help you set up an assistant with OpenAI in a beginner-friendly way. If you have any feedback, suggestions, or issues, feel free to leave a comment or reach out. Your input is appreciated! 🚀
