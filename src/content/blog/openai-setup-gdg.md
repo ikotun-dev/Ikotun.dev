@@ -44,7 +44,7 @@ import os
 dotenv.load_dotenv()
 
 
-#Setting the logs to error level to make the prompts are responses clear
+#Setting the logs to error level to make the prompts and responses clear
 
 
 logging.basicConfig(
