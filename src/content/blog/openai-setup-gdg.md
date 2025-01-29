@@ -68,6 +68,7 @@ This is a beginner-friendly guide, so we will set it up directly in the OpenAI d
 ![Creating an assistant ](https://res.cloudinary.com/dbd7rcwwx/image/upload/v1738104144/Screenshot_2025-01-28_at_11.36.23_PM_suiqha.png)
 
 Next up is to come up with an instruction for your assistant. The instruction is a set of rules that guide your assistant in generating responses.
+<br/>
 <b>Instruction example</b>
 
 > You are a coding assistant. Your job is to help users with programming-related questions. Provide clear, concise explanations and example code snippets when needed. If a user asks for best practices, offer industry-standard recommendations. If a user asks for debugging help, guide them through troubleshooting steps.
