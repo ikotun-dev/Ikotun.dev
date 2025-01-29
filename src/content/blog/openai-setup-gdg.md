@@ -1,5 +1,5 @@
 ---
-title: "Setting up an assistant with openAI"
+title: "Setting Up an Assistant with OpenAI"
 pubDate: 2025-01-28
 author: "Ikotun Collins"
 tags: ["assistant"]
@@ -10,8 +10,8 @@ This is a guide on how to set up an assistant with OpenAI.
 
 > Why would you need an openAI assistant?
 
-You might need to create a virtual assistant or a knowledge base that can intelligently retrieve information from the data you've provided for it.
-A common example is creating a virtial assistant that acts as a customer service agent for a company.
+You might need to create a virtual assistant or a knowledge base that intelligently retrieves information from the data you provide.
+A common example is creating a virtual assistant that acts as a customer service agent for a company.
 
 > Company A sells domain names online: they want to improve user experience by making it easier for users to find the information they need.
 > <br/><b>There are two approaches to this:<br/></b>
@@ -35,12 +35,25 @@ pip install openai
 You want to initialize your openAI API key.
 
 ```python
-import opoenai
+import openai
 import logging
 import dotenv
+import time
 import os
 
 dotenv.load_dotenv()
+
+
+#Setting the logs to error level to make the prompts are responses clear
+
+
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+logging.getLogger("openai").setLevel(logging.ERROR)
+logging.getLogger("httpx").setLevel(logging.ERROR)
+
 
 API_KEY = os.getenv('OPENAI_API_KEY')
 
@@ -49,13 +62,12 @@ if not API_KEY:
 
 ```
 
-Setting up an assistant with openAI can be done manually or via the API as well.<br/>
-This is a very beginner friendly guide so we are going to set it up right in our openAI dashboard
+You can set up an assistant with OpenAI either manually or via the API.<br/>
+This is a beginner-friendly guide, so we will set it up directly in the OpenAI dashboard.
 
 ![Creating an assistant ](https://res.cloudinary.com/dbd7rcwwx/image/upload/v1738104144/Screenshot_2025-01-28_at_11.36.23_PM_suiqha.png)
 
-Next up is to come up with an instruction for your assistant. The instruction is basically a rule that your assistant follows to come up with responses.
-
+Next up is to come up with an instruction for your assistant. The instruction is a set of rules that guide your assistant in generating responses.
 <b>Instruction example</b>
 
 > You are a coding assistant. Your job is to help users with programming-related questions. Provide clear, concise explanations and example code snippets when needed. If a user asks for best practices, offer industry-standard recommendations. If a user asks for debugging help, guide them through troubleshooting steps.
@@ -66,7 +78,7 @@ You need to copy your assistant ID, the string value specified under the name in
 
 ![Creating assistant cont'd](https://res.cloudinary.com/dbd7rcwwx/image/upload/v1738154327/Screenshot_2025-01-28_at_11.39.10_PM_kvaqeq.png)
 
-After succesfully creating the assistant, you can go to the playground to test and see the responses of your assistant. This enables you to see how your assistant responds to different prompts and also modify the instruction for better responses.
+After successfully creating the assistant, you can go to the playground to test and see the responses of your assistant. This enables you to see how your assistant responds to different prompts and also modify the instruction for better responses.
 
 <b>Main Work</b>
 
@@ -91,9 +103,10 @@ The main work is to interact with the assistant via the API. You can do this by 
 > This code snipper follows the previous code snippet where we initialized
 
 ```python
-'''For every conversation you initiate with you assistant, it needs to be in a thread'''
+'''Every conversation you initiate with your assistant must be in a thread.'''
 
 ASSISTANT_ID = "asst_Ig3bfinHWXXXXX"
+
 
 def create_thread():
   try:
@@ -121,10 +134,10 @@ def chat_with_assistant(thread_id:str, message:str):
   create_message(thread_id, message)
   run_thread(thread_id)
 
-  '''You don't just get your responses from the run variable'''
+  '''You cannot directly get responses from the run variable.'''
   '''You need to check intermittently to see if the assistant is actually done processing your request'''
 
-  '''runs have an attribute called status that helps to indicate if that request has been proccessed or there was a problem'''
+  '''runs have an attribute called status that helps to indicate if that request has been processed or there was a problem'''
   run_status_options = ["completed", "failed", "cancelled", "expired", "in_progress", "queued"]
 
 
@@ -154,9 +167,8 @@ def chat_with_assistant(thread_id:str, message:str):
 
     try:
         response = messages.data[0].content[0].text.value # get only the response from the assistant
-        return json.loads(response)
+        return response
     except (json.JSONDecodeError, AttributeError, IndexError) as e:
-        logging.error(f"Error parsing response: {e}")
         return None
 
   else:
@@ -165,36 +177,31 @@ def chat_with_assistant(thread_id:str, message:str):
 
 ```
 
-Our basic demo is almost done<br/>
-We would need to simulate
+Our basic demo is almost done.<br/>Next, we will test our code...
 
 ```python
+# Create a new thread to start the conversation as explained earlier
+thread = create_thread()
+
 def test_assistant():
-    logging.info("Starting assistant test...")
+    while True:
+        user_message = str(input("Enter a message (input quit to end conversation):"))
+        if user_message == "quit":
+            break
 
-    # Create a new thread
-    thread = create_thread()
-    if not thread:
-        logging.error("Failed to create thread")
-        return
-
-    logging.info(f"Thread created with ID: {thread.id}")
-
-    # Test messages
-    test_messages = [
-        "Please return a JSON object with your name and current time",
-        "Please return a JSON object with a greeting and a random number between 1 and 100"
-    ]
-
-    for test_message in test_messages:
-        logging.info(f"Sending message: {test_message}")
-        response = chat_with_assistant(thread.id, test_message)
+        logging.info(f"Sending message: {user_message}")
+        response = chat_with_assistant(thread.id, user_message)
 
         if response:
             logging.info(f"Received response: {response}")
         else:
             logging.error("Failed to get response")
 
-      if __name__ == "__main__":
+
+if __name__ == "__main__":
     test_assistant()
 ```
+
+Testing this on my end, I get this
+
+![Result](https://res.cloudinary.com/dbd7rcwwx/image/upload/v1738181550/Screenshot_2025-01-29_at_8.54.54_PM_e2yck5.png)
