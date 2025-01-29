@@ -1,7 +1,7 @@
 ---
 
 import type { CollectionEntry } from "astro:content"
-import { formatDate } from "../../utils"
+// import { formatDate } from "../../utils"
 const {article} = Astro.props
 
 interface Props {
@@ -17,7 +17,7 @@ interface Props {
         {article?.data.title}
       </h2>
       <h2 class="text-gray-400 font-satoshi text-[11px] font-extrabold w-24">
-        {formatDate(article?.data.pubDate.toLocaleString("en-US", { dateStyle: "short" }))}
+  {article?.data.pubDate.toLocaleDateString("en-US", { dateStyle: "medium" })}
       </h2>
     </div>
   </a>
