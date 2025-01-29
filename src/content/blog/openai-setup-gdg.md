@@ -141,16 +141,13 @@ def chat_with_assistant(thread_id:str, message:str):
   run_status_options = ["completed", "failed", "cancelled", "expired", "in_progress", "queued"]
 
 
-  #flag to check if the assistant is done processing
   is_done = False
 
   while not is_done:
-      # this line retrieves the run that we initiated
       run = client.beta.threads.runs.retrieve(thread_id=thread_id, run_id=run.id)
 
       if run.status in ["completed", "failed", "cancelled", "expired"]:
-         break # exit the loop since the status is probably completed
-
+         break
       if run.status not in ["in_progress", "queued"]:
          return None
 
